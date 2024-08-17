@@ -1,6 +1,7 @@
 <script lang="ts">
   import { AppBar, LightSwitch, ListBox, ListBoxItem, popup, type PopupSettings } from '@skeletonlabs/skeleton';
   import { writable } from 'svelte/store';
+  import { goto } from '$app/navigation';
 
   // Mock login state (replace with your actual auth logic)
   const isLoggedIn = writable(false);
@@ -22,7 +23,7 @@
   }
 </script>
 
-<AppBar class="sticky top-0 z-10">
+<AppBar class="sticky top-0 z-10  h-[8vh]">
   <svelte:fragment slot="lead">
     <a href="/" class="btn btn-sm variant-ghost-surface">
       <span class="text-xl font-bold">Logo</span>
@@ -43,7 +44,7 @@
           </button>
           <div class="card w-48 shadow-xl py-2 variant-filled" data-popup="avatarMenu">
             <ListBox rounded="rounded-none">
-              <ListBoxItem on:click={() => {}}>Profile</ListBoxItem>
+              <ListBoxItem on:click={() => {goto("/profile")}}>Profile</ListBoxItem>
               <ListBoxItem on:click={() => {}}>Account</ListBoxItem>
               <ListBoxItem on:click={handleLogout}>Log out</ListBoxItem>
             </ListBox>

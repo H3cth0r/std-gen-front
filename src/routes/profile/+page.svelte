@@ -1,0 +1,50 @@
+<!-- +page.svelte -->
+<script>
+  import { TabGroup, Tab } from '@skeletonlabs/skeleton';
+  import { UserInfoCard } from '$lib/components';
+  let tabSet = 0;
+  let avatar = 'path/to/avatar.jpg';
+  let username = 'JohnDoe';
+  let name = 'John Doe';
+</script>
+
+<div class="flex flex-col md:flex-row p-4 h-[calc(100vh-var(--app-bar-height))]">
+  <div class="w-full md:w-1/3 md:pr-4 mb-4 md:mb-0">
+    <UserInfoCard {avatar} {username} {name} />
+  </div>
+  <div class="card w-full md:w-2/3 backdrop-blur-xl bg-white/60 rounded-lg shadow-xl p-4 overflow-y-auto">
+    <TabGroup>
+      <Tab bind:group={tabSet} name="creations" value={0}>
+        <span>Creations</span>
+      </Tab>
+      <Tab bind:group={tabSet} name="classes" value={1}>
+        <span>Classes</span>
+      </Tab>
+      <Tab bind:group={tabSet} name="stats" value={2}>
+        <span>Stats</span>
+      </Tab>
+      <Tab bind:group={tabSet} name="account" value={3}>
+        <span>Account</span>
+      </Tab>
+      
+      <!-- Tab Panels -->
+      <svelte:fragment slot="panel">
+        {#if tabSet === 0}
+          <p>Creations content will go here</p>
+        {:else if tabSet === 1}
+          <p>Classes content will go here</p>
+        {:else if tabSet === 2}
+          <p>Stats content will go here</p>
+        {:else if tabSet === 3}
+          <p>Account content will go here</p>
+        {/if}
+      </svelte:fragment>
+    </TabGroup>
+  </div>
+</div>
+
+<style>
+  :global(:root) {
+    --app-bar-height: 64px; /* Adjust this value to match your AppBar height */
+  }
+</style>
