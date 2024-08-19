@@ -8,7 +8,7 @@
   let name = 'John Doe';
 </script>
 
-<div class="flex flex-col md:flex-row p-4 h-[calc(100vh-var(--app-bar-height))]">
+<div class="flex flex-col md:flex-row p-4 h-[92vh]">
   <div class="w-full md:w-1/3 md:pr-4 mb-4 md:mb-0">
     <UserInfoCard {avatar} {username} {name} />
   </div>
@@ -17,13 +17,16 @@
       <Tab bind:group={tabSet} name="creations" value={0}>
         <span>Creations</span>
       </Tab>
-      <Tab bind:group={tabSet} name="classes" value={1}>
+      <Tab bind:group={tabSet} name="groups" value={1}>
+        <span>Groups</span>
+      </Tab>
+      <Tab bind:group={tabSet} name="classes" value={2}>
         <span>Classes</span>
       </Tab>
-      <Tab bind:group={tabSet} name="stats" value={2}>
+      <Tab bind:group={tabSet} name="stats" value={3}>
         <span>Stats</span>
       </Tab>
-      <Tab bind:group={tabSet} name="account" value={3}>
+      <Tab bind:group={tabSet} name="account" value={4}>
         <span>Account</span>
       </Tab>
       
@@ -32,10 +35,12 @@
         {#if tabSet === 0}
           <p>Creations content will go here</p>
         {:else if tabSet === 1}
-          <p>Classes content will go here</p>
+          <p>Groups content will go here</p>
         {:else if tabSet === 2}
-          <p>Stats content will go here</p>
+          <p>Classes content will go here</p>
         {:else if tabSet === 3}
+          <p>Stats content will go here</p>
+        {:else if tabSet === 4}
           <p>Account content will go here</p>
         {/if}
       </svelte:fragment>
