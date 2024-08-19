@@ -22,7 +22,7 @@
       <CalendarHeatMap
         data={heatmapData}
         cellSize={15}
-        cellRadius="50%"
+        cellRadius="3px"
         fontColor="#666"
         view="yearly"
         width="100%"

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import SvelteHeatmap from 'svelte-heatmap';
+  import { getModeUserPrefers } from '@skeletonlabs/skeleton';
 
   // Props
   export let data = [];
@@ -27,9 +28,16 @@
   let heatmapContainer;
   let heatmap;
 
+  let currentTheme;
+  $: currentTheme = getModeUserPrefers();
+  $: fontColor = currentTheme ? '#333333' : '#ffffff';
+  $: emptyColor = currentTheme ? '#ebedf0' : '#2a2a2a';
+
+
   onMount(() => {
     console.log("Mounting heatmap component");
     console.log("Data:", data);
+    console.log(getModeUserPrefers());
     
     if (!startDate) {
       startDate = new Date(new Date().getFullYear(), 0, 1); // Start of current year
