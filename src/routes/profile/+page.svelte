@@ -8,7 +8,7 @@
   let name = 'John Doe';
 </script>
 
-<div class="flex flex-col md:flex-row p-4 h-[92vh]">
+<div class="card flex flex-col md:flex-row p-4 h-[92vh] ">
   <div class="w-full md:w-1/3 md:pr-4 mb-4 md:mb-0">
     <UserInfoCard {avatar} {username} {name} />
   </div>
