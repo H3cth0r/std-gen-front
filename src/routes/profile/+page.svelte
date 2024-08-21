@@ -2,10 +2,14 @@
 <script>
   import { TabGroup, Tab } from '@skeletonlabs/skeleton';
   import { UserInfoCard } from '$lib/components';
+  import { Creations } from "$lib/components";
+  import { GroupsList } from '$lib/components';
+
   let tabSet = 0;
   let avatar = 'path/to/avatar.jpg';
   let username = 'JohnDoe';
   let name = 'John Doe';
+
 </script>
 
 <div class="card flex flex-col md:flex-row p-4 h-[92vh] ">
@@ -33,9 +37,9 @@
       <!-- Tab Panels -->
       <svelte:fragment slot="panel">
         {#if tabSet === 0}
-          <p>Creations content will go here</p>
+          <Creations />
         {:else if tabSet === 1}
-          <p>Groups content will go here</p>
+          <GroupsList />
         {:else if tabSet === 2}
           <p>Classes content will go here</p>
         {:else if tabSet === 3}

@@ -27,8 +27,8 @@
 
   let heatmapContainer;
   let heatmap;
-
   let currentTheme;
+
   $: currentTheme = getModeUserPrefers();
   $: fontColor = currentTheme ? '#333333' : '#ffffff';
   $: emptyColor = currentTheme ? '#ebedf0' : '#2a2a2a';

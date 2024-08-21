@@ -22,7 +22,11 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
   import { NavBar } from '$lib/components';
+  import { initializeStores, Modal } from '@skeletonlabs/skeleton';
+  initializeStores();
 </script>
+
+<Modal />
 
 <!-- NavBar -->
 <NavBar />

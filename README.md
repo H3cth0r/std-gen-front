@@ -2,6 +2,27 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
+## Example HeatMap
+```
+<script>
+  import { CalendarHeatMap } from '$lib/components';
+  const heatmapData = [
+    { date: '2024-01-01', value: 5 },
+    { date: '2024-01-02', value: 10 },
+  ];
+</script>
+
+<CalendarHeatMap
+    data={heatmapData}
+    cellSize={15}
+    cellRadius="3px"
+    fontColor="#666"
+    view="yearly"
+    width="100%"
+    height="50%"
+/>
+```
+
 ## Creating a project
 
 If you're seeing this, you've probably already done this step. Congrats!
@@ -36,3 +57,4 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
