@@ -38,27 +38,28 @@
   </div>
   <button
     on:click={toggleSidebar}
-    class={`fixed ${buttonPosition} top-1/2 -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full focus:outline-none z-10 transition-all duration-300 ease-in-out`}
+    type="button"
+    class={`btn-icon !bg-transparent fixed ${buttonPosition} top-1/2 -translate-y-1/2 p-2 focus:outline-none z-10 transition-all duration-300 ease-in-out`}
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d={isOpen
-          ? direction === 'left'
-            ? "M15 19l-7-7 7-7"
-            : "M9 5l7 7-7 7"
-          : direction === 'left'
-            ? "M9 5l7 7-7 7"
-            : "M15 19l-7-7 7-7"}
-      />
-    </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d={isOpen
+            ? direction === 'left'
+              ? "M15 19l-7-7 7-7"
+              : "M9 5l7 7-7 7"
+            : direction === 'left'
+              ? "M9 5l7 7-7 7"
+              : "M15 19l-7-7 7-7"}
+        />
+      </svg>
   </button>
 </div>
