@@ -8,3 +8,4 @@ export {default as ModuleCard} from "./ModuleCard/ModuleCard.svelte";
 export {default as Creations} from "./Creations/Creations.svelte";
 export {default as GroupsList} from "./GroupsList/GroupsList.svelte";
 export {default as GroupTable} from "./GroupTable/GroupTable.svelte";
+export {default as SlideBar} from "./SlideBar/SlideBar.svelte";

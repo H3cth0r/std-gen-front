@@ -1,5 +1,8 @@
 <!-- ModuleCard.svelte -->
 <script lang="ts">
+  import { Avatar } from '@skeletonlabs/skeleton';
+  import { goto } from '$app/navigation';
+
   export let title = "";
   export let activities = 0;
   export let days = 0;
@@ -7,15 +10,9 @@
   export let username = "";
   export let isPublic = false;
 
-  function handleOptions() {
-    // Handle options menu
-    console.log("Options clicked");
-  }
-
 </script>
 
-
-<a class="card p-4">
+<a class="card p-4" href="/module">
   <header class="card-header flex justify-between items-center">
     <h3 class="h3">{title}</h3>
     {#if isPublic}
@@ -29,13 +26,18 @@
     <p><span class="font-semibold">Activities:</span> {activities}</p>
     <p><span class="font-semibold">Days:</span> {days}</p>
     <p><span class="font-semibold">Date:</span> {date}</p>
-    <p><span class="font-semibold">Created by:</span> {username}</p>
   </section>
   
   <footer class="card-footer flex justify-between items-center">
     <span></span>
-    <button type="button" class="btn btn-sm !bg-transparent" on:click={handleOptions} >
-      <span class="text-xl">⋮</span>
+    <button type="button" class="btn btn-sm !bg-transparent" on:click={() => {goto("/")}} >
+      <Avatar 
+        src="https://images.unsplash.com/photo-1617296538902-887900d9b592?ixid=M3w0Njc5ODF8MHwxfGFsbHx8fHx8fHx8fDE2ODc5NzExMDB8&ixlib=rb-4.0.3&w=128&h=128&auto=format&fit=crop" 
+        width="w-10" 
+        rounded="rounded-full" 
+        border="border-4 border-surface-300-600-token hover:!border-primary-500"
+        cursor="cursor-pointer"
+      />
     </button>
   </footer>
 </a>
