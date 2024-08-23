@@ -9,3 +9,4 @@ export {default as Creations} from "./Creations/Creations.svelte";
 export {default as GroupsList} from "./GroupsList/GroupsList.svelte";
 export {default as GroupTable} from "./GroupTable/GroupTable.svelte";
 export {default as SlideBar} from "./SlideBar/SlideBar.svelte";
+export {default as ModuleInfo} from "./ModuleInfo/ModuleInfo.svelte";
